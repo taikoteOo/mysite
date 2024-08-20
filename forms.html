@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Forms</title>
+    </head>
+    <body>
+        <form action="#" method="post" enctype="application/x-www-form-urlencoded">
+            <p>
+            <label for="login">Login</label>
+            <input id="login" name="login" placeholder="Login" maxlength="5" autofocus/>
+            </p>
+            <p>
+            <label for="password">Password</label>
+            <input name="password" type="password" placeholder="Password"/>
+            </p>
+            <p>
+            <label for="phone">Phone</label>
+            <input name="phone" type="text" value="+79990002255" disabled/>
+            </p>
+            <p>
+            <label for="age">Age</label>
+            <input name="age" type="number" min="12" max="120" step="10"/>
+            </p>
+            <p>
+            <label for="rbutton">Radio clic</label>
+            <input name="rbutton" type="radio"/>
+            </p>
+            <p>
+            <label for="chbox1">Checkbox 1</label>
+            <input name="chbox1" type="checkbox"/>
+            </p>
+            <p>
+            <label for="chbox2">Checkbox 2</label>
+            <input name="chbox2" type="checkbox" checked/>
+            </p>
+            <p>
+            <label for="color">Color</label>
+            <input name="color" type="color"/>
+            </p>
+            <p>
+            <label for="file">File</label>
+            <input name="file" type="file"/>
+            </p>
+            <p>
+            <label for="range">Range</label>
+            <input name="range" type="range" min="1" max="10"/>
+            </p>
+            <input type="submit" value="Go"/>
+            <input type="reset" value="Reset"/>
+        </form>
+    </body>
