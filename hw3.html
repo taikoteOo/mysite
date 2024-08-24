@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+    <style>
+        form {
+            color: blueviolet;
+        }
+        #sex {
+            color: rgb(70, 138, 2);
+        }
+        td {
+            border: solid 1px;
+            border-color: black;
+            color: red;
+        }
+        th {
+            border: solid 2px;
+            border-color: black;
+            color: blue;
+        }
+        .ser {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration form</h1>
+    <form action="#" method="post">
+        <p>
+            <label for="email" style="color: red;"><b>E-mail</b></label>
+            <input name="email" type="email" required placeholder="name@gmail.com"/>
+        </p>
+        <p>
+            <label for="password"style="color: red;"><b>Password</b></label>
+            <input name="password" type="password" required/>
+        </p>
+        <p>
+            <label for="login" style="color: red;"><b>Login</b></label>
+            <input name="login" type="text" required/>
+        </p>
+        <p>
+            <label for="sex" id="sex">Sex</label>
+            <br>
+            <input name="sex" type="radio"/>
+            <label for="sex" style="font-size: 75%;">Female</label>
+            <br><input name="sex" type="radio"/>
+            <label for="sex" style="font-size: 75%;">Male</label>
+        </p>
+        <!-- <p>
+            <label for="birth">Date of birth</label>
+            <br>
+            <input name="birth" type="number" min="1" max="31" />
+            <input name="birth" type="number" min="1" max="12"/>
+            <input name="birth" type="number" min="1920" max="2024"/>
+        </p> 
+        Дата через тип "number"-->
+        <p>
+            <label for="birth" style="background-color: rgb(98, 98, 255); color: aliceblue;">Date of birth</label>
+            <br><input name="birth" type="date"/>
+        </p>
+        <p>
+            <label for="photo">Photo</label>
+            <input name="photo" type="file"/>
+        </p>
+        <p>
+            Topics of interest
+            <br><input name="topic" type="checkbox"/>
+            <label for="topic" style="font-size: 75%;">Phyton</label>
+            <br><input name="topic" type="checkbox"/>
+            <label for="topic" style="font-size: 75%;">C#</label>
+            <br><input name="topic" type="checkbox"/>
+            <label for="topic" style="font-size: 75%;">C++</label>
+            <br><input name="topic" type="checkbox"/>
+            <label for="topic" style="font-size: 75%;">Java</label>
+            <br><input name="topic" type="checkbox"/>
+            <label for="topic" style="font-size: 75%;">JavaScript</label>
+        </p>
+        <p>
+            <label for="lvl">English level</label>
+            <br><label for="lvl">0</label>
+            <input name="lvl" type="range" min="0" max="6" step="1"/>
+            <label for="lvl">6</label>
+        </p>
+        <p>
+            <label for="color">Favorite color</label>
+            <input name="color" type="color"/>
+        </p>
+        <p>
+            <label for="social networks">Link to social networks</label>
+            <input name="social networks" type="url" placeholder="https://vk.com/yourID"/>
+        </p>
+        <p>
+            <input name="rules" type="checkbox" checked required/>
+            <label for="rules">I have read and agree to the site rules and privacy policy.</label>
+        </p>
+        <p>
+            <label for="go">Go</label>
+            <input name="go" type="submit"/>
+        </p>
+    </form>
+    <table style="border-collapse: collapse">
+        <thead>
+            <h2>Contact details</h2>
+            <tr>
+                <th>
+                    Service
+                </th>
+                <th>
+                    Number
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th>
+                    Opening hours
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="ser">
+                    Yandex
+                </td>
+                <td>
+                    +7 495 739-70-00
+                </td>
+                <td>
+                    info@balance.yandex.ru.
+                </td>
+                <td>
+                    00.00-24.00
+                </td>
+            </tr>
+            <tr>
+                <td class="ser">
+                    Google
+                </td>
+                <td>
+                    (650) 253-0000
+                </td>
+                <td>
+                    press@google.com.
+                </td>
+                <td>
+                    09.00-18.00
+                </td>
+            </tr>
+            <tr>
+                <td class="ser">
+                    Vk
+                </td>
+                <td>
+                    N/A
+                </td>
+                <td>
+                    press@vk.com
+                </td>
+                <td>
+                    10.00-22.00
+                </td>
+            </tr>
+            <tr>
+                <td class="ser">
+                    Kinopoisk
+                </td>
+                <td>
+                    8-800-600-30-30
+                </td>
+                <td>
+                    N/A
+                </td>
+                <td>
+                    00.00-24.00
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
