@@ -1,0 +1,39 @@
+h1{
+    color: green;
+    font-weight: 600;
+    font-size: 50px;
+    margin-left: 20px;
+    margin-bottom: -20px;
+    margin-top: 0px;
+}
+.img {
+    height: 250px;
+}
+.zoo {
+    font-size: 20px;
+    margin-right: 700px;
+    margin-left: 20px;
+}
+.zoo a {
+    color: green;
+    font-size: 15px;
+}
+.name {
+    font-size: 25px;
+    font-weight: 500;
+    background-color: rgba(205, 92, 92, 0.678);
+    color: white
+}
+footer {
+    font-size: 15px;
+}
+header {
+    word-spacing: 10px;
+}
+#prof {
+    word-spacing: 1px;
+}
+header a {
+    color: rgb(42, 223, 6);
+    
+}
