@@ -1,0 +1,62 @@
+a {
+    color: rgb(42, 223, 6);
+}
+h1 {
+    color: green;
+}
+header {
+    word-spacing: 10px;
+}
+#prof {
+    word-spacing: 1px;
+}
+#section h3 {
+    color: green;
+    margin: 5px;
+} 
+#section ul {
+    padding-left: 20px;
+    margin: 0;
+}
+.allform {
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 16px;
+    margin: 10px 0;
+    width: 300px;
+    background: linear-gradient(to bottom, green, rgb(42, 223, 6));
+}
+.allform h3 {
+    color: #bafdba;
+    margin: 5px;
+    width: 100%;
+    padding-left: 90px;
+    box-sizing: border-box
+}
+.inform {
+    padding: 10px;
+}
+.inform  label {
+    padding-bottom: 5px;
+    display: block;
+    color: #bafdba;
+    font-weight: 800;
+}
+.inform  input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid green;
+    border-radius: 4px;
+}
+.inform  button {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid green;
+    border-radius: 4px;
+}
+.inform select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid green;
+    border-radius: 4px;
+}
