@@ -3,6 +3,7 @@ a {
 }
 h1 {
     color: green;
+    margin: 10px;
 }
 header {
     word-spacing: 10px;
@@ -12,7 +13,7 @@ header {
 }
 #section h3 {
     color: green;
-    margin: 5px;
+    margin: 10px;
 } 
 #section ul {
     padding-left: 20px;
@@ -22,7 +23,7 @@ header {
     padding: 10px;
     border: 1px solid green;
     border-radius: 16px;
-    margin: 10px 0;
+    margin: 10px 250px;
     width: 300px;
     background: linear-gradient(to bottom, green, rgb(42, 223, 6));
 }
@@ -53,10 +54,52 @@ header {
     box-sizing: border-box;
     border: 1px solid green;
     border-radius: 4px;
+    background: green;
+    color: #bafdba;
+    font-size: 20px;
 }
 .inform select {
     width: 100%;
     box-sizing: border-box;
     border: 1px solid green;
     border-radius: 4px;
+}
+.pets h2 {
+  font-size: 25px;
+    font-weight: 500;
+    background-color: rgba(205, 92, 92, 0.678);
+    color: white
+}
+.list {
+  padding-left: 20px;
+  margin: 0;
+}
+.pets {
+  width: 50%;
+}
+#stat th {
+  border: solid 1px green;
+  color: green;
+}
+#stat td {
+  border: solid 1px green;
+}
+#stat {
+  border-collapse: collapse;
+  width: 20%;
+  valign: middle;
+}
+h3 {
+  color: green;
+  margin: 10px;
+}
+#autor h2 {
+  color: green;
+  margin: 10px;
+}
+#autor {
+  width: 50%;
+}
+#autor p {
+  margin: 0;
 }
