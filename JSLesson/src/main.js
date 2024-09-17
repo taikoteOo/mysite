@@ -80,15 +80,16 @@ function calc(a, b, operation){
 //     alert("Результат вашей операции: "+ res);
 // }
 
-function calcPaS() {
-    let x = Number(document.getElementsByName("nam1")[0].value);
-    let y = Number(document.getElementsByName("nam2")[0].value);
-    let op = document.getElementsByName("operation")[0].value;
-    let res = calc(x, y, op);
-    alert("Результат операции: " + res);
-}
+// function calcPaS() {
+//     let x = Number(document.getElementsByName("nam1")[0].value);
+//     let y = Number(document.getElementsByName("nam2")[0].value);
+//     let op = document.getElementsByName("operation")[0].value;
+//     let res = calc(x, y, op);
+//     alert("Результат операции: " + res);
+// }
 
-window.onload = ()=> {
-    let buttonCalc = document.getElementById("calculate");
-    buttonCalc.addEventListener("click", calcPaS);
-}
+// window.onload = ()=> {
+//     let buttonCalc = document.getElementById("calculate");
+//     buttonCalc.addEventListener("click", calcPaS);
+// }
+
