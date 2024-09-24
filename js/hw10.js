@@ -115,52 +115,105 @@ function div(o1, o2) {
 };
 
 // Задание 3
-let times = {
-    hours: 5,
-    minuts: 15,
-    seconds: 50, 
-};
+function timese () {
+    let x = +prompt("Задайте количество часов");
+    let y = +prompt("Задайте количество минут");
+    let z = +prompt("Задайте количество секунд");
+    let times = {
+        hours: x,
+        minuts: y,
+        seconds: z, 
+    };
+}
 
+// 1. Функция вывода времени на экран
 function t (o) {
     alert("Заданное время: "+o.hours+" часов "+o.minuts+" минут "+o.seconds+" секунд.")
 };
 
-function secon (times) {
+// 2. Функция изменения времени на определённое количество секунд
+function secon (o) {
     let s = +prompt("Укажите количество секунд, на которое необходимо произвести изменение")
     let fun = prompt("Укажите -, если секунды нужно отнять, или +, если прибавить")
     if (fun == "-") {
-        if ((times.seconds - s)<0 && (times.seconds - s)>=(-60)) {
-            times.minuts = times.minuts - 1
-            times.seconds = 60+(times.seconds - s)
-        } else if ((times.seconds - s)<0 && (times.seconds - s)<(-60)) {
-            times.minuts = times.minuts + Math.ceil((times.seconds - s)/60) - 1
-            times.seconds = 60+((times.seconds - s)%60)
-            if (times.minuts<0) {
-                times.hours = times.hours + Math.ceil(times.minuts/60) - 1
-                times.minuts = 60+(times.minuts%60)
+        o.seconds = o.seconds - s
+        if (o.seconds<0) {
+            o.minuts = o.minuts + Math.floor(o.seconds/60)
+            o.seconds = Math.floor(o.seconds/60)*(-60) + o.seconds
+            if (o.minuts<0) {
+                o.hours = o.hours + Math.floor(o.minuts/60)
+                o.minuts = Math.floor(o.minuts/60)*(-60) + o.minuts
+                if (o.hours < 0) {
+                    o.hours = 0;
+                    o.minuts = 0;
+                    o.seconds = 0;
+                    alert ("Не ступай на путь отрицательного времпени!")
+                }
             }
-        } else if ((times.seconds - s)>=0) {
-            times.seconds = times.seconds - s
         }
-    } else if (fun == "+") {
-        if ((times.seconds + s)>=(60)) {
-            times.minuts = times.minuts + Math.floor((times.seconds + s)/60)
-            if ((times.seconds + s)==(60)) {
-                times.seconds = 0
-            } else {
-                times.seconds = ((times.seconds + s)%60)
+    } else if (fun == "+"){
+        o.seconds = o.seconds + s
+        if (o.seconds>=60){
+            o.minuts = o.minuts + Math.floor(o.seconds/60)
+            o.seconds = o.seconds - Math.floor(o.seconds/60)*(60)
+            if (o.minuts>=60) {
+                o.hours = o.hours + Math.floor(o.minuts/60)
+                o.minuts = o.minuts - Math.floor(o.minuts/60)*(60)
+                if (o.hours>=24) {
+                    alert("Мы выходим за рамки суток, дальше только бесконечность!")
+                }
             }
-            if (times.minuts >=60){
-                times.hours = times.hours + Math.floor(times.minuts/60)
-                times.minuts = (times.minuts%60)
-            } if (times.minuts == 60) {
-                times.minuts = 0
-            } else {
-                times.minuts = times.minuts
-            }
-        } else if ((times.seconds + s)<(60)) {
-            times.seconds = times.seconds + s
         }
     }
-    alert("Итоговое время: "+times.hours+" часов "+times.minuts+" минут "+times.seconds+" секунд.")
+    alert("Итоговое время: "+o.hours+" часов "+o.minuts+" минут "+o.seconds+" секунд.")
+}
+
+// 3. Функция изменения времени на определённое количество минут
+function min (o) {
+    let m = +prompt("Укажите количество минут, на которое необходимо произвести изменение")
+    let fun = prompt("Укажите -, если минуты нужно отнять, или +, если прибавить")
+    if (fun == "-") {
+        o.minuts = o.minuts - m
+        if (o.minuts<0) {
+            o.hours = o.hours + Math.floor(o.minuts/60)
+            o.minuts = Math.floor(o.minuts/60)*(-60) + o.minuts
+            if (o.hours < 0) {
+                o.hours = 0;
+                o.minuts = 0;
+                o.seconds = 0;
+                alert ("Не ступай на путь отрицательного времпени!")
+            }
+        }
+    } else if (fun == "+"){
+        o.minuts = o.minuts + m
+        if (o.minuts>=60) {
+            o.hours = o.hours + Math.floor(o.minuts/60)
+            o.minuts =o.minuts - Math.floor(o.minuts/60)*(60)
+            if (o.hours>=24) {
+                alert("Мы выходим за рамки суток, дальше только бесконечность!")
+            }
+        }
+    }
+    alert("Итоговое время: "+o.hours+" часов "+o.minuts+" минут "+o.seconds+" секунд.")
+}
+
+// 3. Функция изменения времени на определённое количество часов
+function hor (o) {
+    let h = +prompt("Укажите количество часов, на которое необходимо произвести изменение")
+    let fun = prompt("Укажите -, если часы нужно отнять, или +, если прибавить")
+    if (fun == "-") {
+        o.hours = o.hours - h
+        if (o.hours < 0) {
+            o.hours = 0;
+            o.minuts = 0;
+            o.seconds = 0;
+            alert ("Не ступай на путь отрицательного времпени!")
+        }
+    } else if (fun == "+"){
+        o.hours = o.hours + h
+        if (o.hours>=24) {
+            alert("Мы выходим за рамки суток, дальше только бесконечность!")
+        }
+    }
+    alert("Итоговое время: "+o.hours+" часов "+o.minuts+" минут "+o.seconds+" секунд.")
 }
