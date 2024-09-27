@@ -32,7 +32,7 @@ function time(o) {
         }
     };
     elif();
-    alert("\nВремя в пути: "+Math.floor(t)+" часов "+Math.floor((t-Math.floor(t))*60) +" минут "+Math.round((((t-Math.floor(t))*60)-(Math.floor((t-Math.floor(t))*60)))*60)+" секунд");
+    alert("\nВремя в пути: "+Math.floor(t)+" часов "+Math.floor((t-Math.floor(t))*60) +" минут");
 };
 
 // Задание 2
@@ -63,7 +63,13 @@ function red (o) {
             o.den = "error"
         }
     };
-    alert("Результат вычисления: "+o.num+"/"+o.den);
+    if (o.num==o.den) {
+        alert("Результат вычисления: 1")
+    } else if (o.num == 0) {
+        alert("Результат вычисления: 0")
+    } else {
+        alert("Результат вычисления: "+o.num+"/"+o.den);
+    }
 }
 
 // 1. Функция сложения
