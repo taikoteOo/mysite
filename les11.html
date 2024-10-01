@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+    </body>
+    <script>
+        const myarray = []
+        const people = ["Tanya","Ivan","Igor"]
+        console.log(people[0])
+        console.log(people[5])
+        let igor = people[2]
+        console.log(igor)
+        people[3] = "Sergey"
+        console.log(people)
+        let cars = ["bmw", "mazda", "audi", "renault", "toyota"]
+        for(let i=0; i < cars.length; i++){
+            console.log(cars[i])
+        }
+        for (const car of cars){
+            consol.log(car)
+        }
+        for (const index in cars){
+            console.log(index)
+        }
+        let i = 1
+        while (i < cars.length){
+            console.log(cars[i])
+            i++
+        }
+        let j = 0
+        do {
+            console.log(cars[j])
+            j++
+        }
+        while (j < cars.length)
+    </script>
+</html>
