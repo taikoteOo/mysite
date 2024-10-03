@@ -7,34 +7,102 @@
     <body>
     </body>
     <script>
-        const myarray = []
-        const people = ["Tanya","Ivan","Igor"]
-        console.log(people[0])
-        console.log(people[5])
-        let igor = people[2]
-        console.log(igor)
-        people[3] = "Sergey"
-        console.log(people)
-        let cars = ["bmw", "mazda", "audi", "renault", "toyota"]
-        for(let i=0; i < cars.length; i++){
-            console.log(cars[i])
+        // const myarray = []
+        // const people = ["Tanya","Ivan","Igor"]
+        // console.log(people[0])
+        // console.log(people[5])
+        // let igor = people[2]
+        // console.log(igor)
+        // people[3] = "Sergey"
+        // console.log(people)
+        // let cars = ["bmw", "mazda", "audi", "renault", "toyota"]
+        // for(let i=0; i < cars.length; i++){
+        //     console.log(cars[i])
+        // }
+        // for (const car of cars){
+        //     consol.log(car)
+        // }
+        // for (const index in cars){
+        //     console.log(index)
+        // }
+        // let i = 1
+        // while (i < cars.length){
+        //     console.log(cars[i])
+        //     i++
+        // }
+        // let j = 0
+        // do {
+        //     console.log(cars[j])
+        //     j++
+        // }
+        // while (j < cars.length)
+        // function hello(name){
+        //     console.log(`Hello ${name}`)
+        // }
+        // hello("Ivan")
+        // const message = function(msg){
+        //     console.log(msg)
+        // }
+        // function printPerson(person){
+        //     console.log("Name: ", person[0]);
+        //     console.log("Age: ", person[1]);
+        //     console.log("Email: ", person[2]);
+        // }
+        // function printPersonSpread(name, age, mail){
+        //     console.log("Name: ", name);
+        //     console.log("Age: ", age);
+        //     console.log("Email: ", mail);
+        // }
+        // const ivan = ["Ivan", 23, "ivan@gmail.com"]
+        // printPerson(ivan)
+        // printPersonSpread(...ivan)
+
+        // function sunAnyElements(){
+        //     let result = 0;
+        //     for (const n of arguments){
+        //         result += n;
+        //     }
+        // }
+        function getName(name){
+            const newName = `${name}!`
+            return newName
         }
-        for (const car of cars){
-            consol.log(car)
+
+        let newName = getName("Ivan")
+
+        function getSum(a,b){
+            const result = a+b
+            return result
         }
-        for (const index in cars){
-            console.log(index)
+        function getSub(a,b){
+            const result = a-b
+            return result
         }
-        let i = 1
-        while (i < cars.length){
-            console.log(cars[i])
-            i++
+        function operation(a,b,func){
+            const result = func(a,b)
+            return result
         }
-        let j = 0
-        do {
-            console.log(cars[j])
-            j++
+
+        // console.log("Сумма чисел")
+        // console.log(operation(3,4,getSum))
+
+        // console.log("Разность чисел")
+        // console.log(operation(3,4,getSub))
+
+        function hello(){
+            console.log("Hello")
         }
-        while (j < cars.length)
+
+        const hi = (msg) => console.log(msg)
+        hi("Message")
+
+        const newSum = (a,b) => a+b
+        result = newSum(4,6)
+        console.log(result)
+
+        const square = n => {
+            const result = n*n
+            return result
+        }
     </script>
 </html>
