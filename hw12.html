@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work 12</title>
+</head>
+<body> 
+</body>
+<script>
+    // Стрелочные математические функции
+    let getSum = (a,b) => a+b;
+    let getSub = (a,b) => {
+        const result = (a>b) ? a-b : b-a
+        return result
+    };
+    let getMult = (a,b) => a*b;
+    let getQuot = (a,b) => {
+        let result = (a == 0 || b == 0) ? 0 : (a>b) ? a/b : b/a
+        return result
+    };
+    // Собирающая функция
+    let getMath = (a,b, fun1, fun2, fun3, fun4) => {
+        const result1 = fun1(a,b);
+        const result2 = fun2(a,b);
+        const result3 = fun3(a,b);
+        const result4 = fun4(a,b);
+        return `Первое число:${a}, Второе число: ${b}\nСумма числел: ${result1} \nРасзность числел: ${result2} \nПроизведение числел: ${result3} \nЧастное числел: ${result4}`
+    };
+    // Вызов функций с заданными числами
+    console.log(`Первое число больше второго:\n${getMath(10,2,getSum,getSub,getMult,getQuot)}`);
+    console.log(`Первое число меньше второго:\n${getMath(2,4,getSum,getSub,getMult,getQuot)}`);
+    console.log(`Одно из чисел равно нулю:\n${getMath(0,5,getSum,getSub,getMult,getQuot)}`);
+    // Массив с информацией о машинах
+    let arrayCars = 
+        [['Volkswagen','T1',1965],
+        ['Hyundai','i30',2016],
+        ['Haval','F7x',2021]];
+    // Функция с выводом информации о машинах
+    function everyCar(cars) {
+        let result = ''
+        for (let i = 0; i<cars.length; i++) {
+            result += `${i+1} машина: \nМарка - ${cars[i][0]} \nМодель - ${cars[i][1]} \nГод выпуска - ${cars[i][2]}\n\n`
+        }
+        return result
+    };
+    console.log(everyCar(arrayCars));
+</script>
+</html>

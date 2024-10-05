@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work 11</title>
+</head>
+<body>
+</body>
+<script>
+    // Создание и вывод массива
+    let arrayName = ['Tanya','Volodya','Maria','Lena','Anton'];
+    console.log(arrayName);
+    // Добавление элементов
+    arrayName.push('Natalia'); // в конец массива
+    arrayName.unshift('Egor'); // в начало
+    console.log(arrayName);
+    // Удаление элементов
+    arrayName.shift(); // певого
+    arrayName.pop(); // последнего
+    console.log(arrayName);
+    // Сохранение и выведение длинны массива
+    let lenOfList = arrayName.length;
+    console.log(`Длина массива: ${lenOfList}`);
+    // Выведение значенией массива
+    console.log("Цикл-счётчик for:");
+    for (let i = 0; i<arrayName.length; i++) {
+        console.log(arrayName[i])
+    };
+    console.log("Цикл for ... of:");
+    for (const name of arrayName) {
+        console.log(name)
+    };
+    console.log("Цикл for ... in:");
+    for (let i in arrayName) {
+        console.log(arrayName[i])
+    };
+    console.log("Цикл с условием while:");
+    let i = 0;
+    while (i<arrayName.length) {
+        if (arrayName[i].length <= 5) {
+            console.log(arrayName[i])
+        };
+        i ++
+    };
+    console.log("Цикл с условием do ... while:");
+    let j=4;
+    do {
+        if (arrayName[j].length <= 5) {
+            console.log(arrayName[j])
+        };
+        j ++
+    }
+    while (j<arrayName.length);
+</script>
+</html>
