@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work 13</title>
+</head>
+<body>
+</body>
+<script>
+    // 1. Сравнение длинны строк
+    function lenghtComp(str1,str2) {
+    let length1 = str1.length;
+    let length2 = str2.length;
+    let result;
+    if (length1 > length2) {
+        result = 1;
+    } else if (length1 < length2) {
+        result = -1;
+    } else if (length1 == length2) {
+        result = 0;
+    } else {
+        result = "error";
+    }
+    return result
+    };
+
+    // 2. Перевод первого символа строки в верхний регистр
+    let cap = str => str[0].toUpperCase()+str.slice(1,str.length);
+
+    // 3. Подсчёт количества гласных букв в переданной строке
+    function vowelCount(str) {
+    const vowels = ["а","е","ё","и","о","у","ы","э","ю","я","А","Е","Ё","И","О","У","Ы","Э","Ю","Я"];
+    let result = 0;
+    for (let vowel of vowels){
+        let count = 0;
+        for (let i in str) {
+        if (str[i] == vowel){
+            count++
+        }
+        }
+        result = result+count;
+    }
+    return `В строке ${result} гласных`;
+    };
+
+    // 4. Проверка на спам
+    function antiSpam(str) {
+    str = str.toLowerCase();
+    let result;
+    if (str.includes('скидка')==true || str.includes('бесплатно')==true || str.includes('акция')==true) {
+        result = true;
+    } else {
+        result = false;
+    }
+    return result
+    };
+
+    // 5. Сокращение строки
+    let Abbrev = (str,n) => str = str.substr(0,n-3).concat('...')
+
+    // 6. Определение палиндрома
+    function getPalindrome(str) {
+    let str2 = str.split('').reverse().join('');
+    if (str==str2) {
+        return 'Это палиндром'
+    } else {
+        return 'Это не палиндром'
+    }
+    };
+
+    // 7. Количество слов в предложении
+    let countWord = str => `В предложении ${str.split(' ').length} слов`
+
+    // 8. Определение самого длинного слова
+    function lonhWord(str) {
+    let array = str.split(' ');
+    let len = 0;
+    let j = 0;
+    for (let i in array) {
+        if (array[i].length > len) {
+        len = array[i].length
+        j = i
+        }
+    }
+    return `Самое длинное слово в предложении: ${array[j]}`
+    };
+
+    // 9. Средняя длина слов
+    function avgLength(str) {
+    let array = str.split(' ');
+    let avgLen = 0;
+    for (let i in array) {
+        avgLen = avgLen + array[i].length
+    }
+    return `Средняя длина слов в предложении: ${Math.round(avgLen/array.length)} букв`
+    };
+
+    // 10. Поиск символа в строке
+    function countElements(str, n) {
+    let indexEl = [];
+    let countEl = 0;
+    for (let i in str){
+        if (str[i] == n) {
+        countEl++
+        indexEl.push(i)
+        }
+    }
+    return `Индексы, по которым находится символ в строке: ${indexEl}\nСимвол в строке встречается ${countEl} раз`
+    };
+
+    console.log(lenghtComp('Первая стока подлиннее','Вторая строка короче'));
+    console.log(cap('строка с маленькой буквы'));
+    console.log(vowelCount('Строка, гдЕ много рАзных гласнЫх'));
+    console.log(antiSpam('В этой строке точно есть СКИДКА'));
+    console.log(Abbrev('Сокращённая строка',8));
+    console.log(getPalindrome('мат и тут и там'));
+    console.log(countWord('Строка (или предложение) с некоторым количеством слов'));
+    console.log(lonhWord('Строка, где есть длиннющее слово'));
+    console.log(avgLength('В среднем в этой строке слова'));
+    console.log(countElements('Будем искать популярную, но незаметную букву','у'));
+
+    // 1. Создание и вывод объекта
+    const person = {
+        name: 'Tatiana',
+        age: 27,
+        city: 'SPb'
+    };
+    console.log(person);
+
+    // 2. Изменение свойств объекта
+    const car = {
+        make: 'BMV',
+        model: 'A6',
+        year: 2020
+    };
+    console.log(`Год до изменения: ${car.year}`);
+    car.year = 2024;
+    console.log(`Год после изменения: ${car.year}`);
+
+    // 3. Добавление новых свойств
+    const book = {
+        title: 'The Colour of Magic',
+        autor: 'Terry Pratchett'
+    };
+    book.publishedYear = 1983;
+    console.log(book);
+
+    // 4. Удаление свойств
+    const student ={
+        name: 'Vladimir',
+        grade: 5,
+        age: 21
+    };
+    delete student.age
+    console.log(student);
+</script>
+</html>
