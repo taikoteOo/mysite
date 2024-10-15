@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h2>1. Текстовое поле</h2>
+    <input type="text" name="textImputField" id="textInput">
+    <button onclick="displayText()" id="btnText">Показать текст</button>
+    <p id="textDisplay">Текст будет отображён здесь</p>
+
+    <h2>2. Чекбоксы</h2>
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Чекбокс 1</label>
+    <input type="checkbox" id="checkbox2">
+    <label for="checkbox2">Чекбокс 2</label>
+    <button ondblclick="showChrchboxes()">Показать состояние чекбоксов</button>
+
+    <h2>3. Радиокнопки</h2>
+    <input type="radio" name="radioGroup" id="radio1" value="Option 1">
+    <label for="radio1">Опция №1</label>
+    <input type="radio" name="radioGroup" id="radio2" value="Option 2">
+    <label for="radio2">Опция №2</label>
+    <button onclick="showRadio()">Показать выбранную опцию</button>
+
+    <h2>4. Одиночный выбор</h2>
+    <select id="dropdown">
+        <option value="option1">Опция №1</option>
+        <option value="option2">Опция №2</option>
+        <option value="option3">Опция №3</option>
+        <option value="option4">Опция №4</option>
+    </select>
+    <button onclick="showSelected()">Показать выбранную опцию</button>
+</body>
+<script>
+    function displayText(){
+        const inputValue = document.getElementById("textInput").value;
+        // const inputValue = document.querrySelector("#textInput").value
+        document.querySelector('#textDisplay').innerText = inputValue;
+    }
+
+    function showChrchboxes() {
+        const checkbox1 = document.querySelector('#checkbox1').checked;
+        const checkbox2 = document.querySelector('#checkbox2').checked;
+        alert(`Чекбокс 1: ${checkbox1}\nЧекбокс 2: ${checkbox2}`)
+    }
+
+    function showRadio(){
+        const selectedRadio = document.querySelector('input[name="radioGroup"]:checked')
+        if (selectedRadio){
+            alert(`Выбрана ${selectedRadio.value}`)
+        } else {
+            alert('Ничего не выбрано')
+        }
+    }
+
+    function showSelected() {
+        const dropDown = document.querySelector('#dropdown')
+        alert(`Выбрна опция ${dropDown.value}`)
+    }
+</script>
+</html>
