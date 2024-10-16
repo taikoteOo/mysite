@@ -154,5 +154,79 @@
     };
     delete student.age
     console.log(student);
+
+    // 5. Проверка наличия свойства
+    const product ={
+        id: 1576,
+        name: 'phone',
+        price: '1050$'
+    };
+    function searchPrice(obj){
+        let productPrice = obj.price;
+        if (productPrice == undefined) {
+            console.log('У объекта нет свойства price');
+        } else {
+            console.log(`Цена объекта: ${productPrice}`);
+        }
+    };
+    searchPrice(product);
+
+    // 6. Перебор свойств объекта
+    const fruits ={
+        apple: 3,
+        orange: 2,
+        kiwi: 5
+    };
+    for (fruit in fruits){
+        console.log(`${fruit}: ${fruits[fruit]}`)
+    }
+
+    // 7. Слияние объектов
+    obj1 = { a: 1, b: 2 };
+    obj2 = { b: 3, c: 4 };
+    objSum = {}
+    for (i in obj1) {
+       for (j in obj2){
+        if (i == j){
+            objSum[i]=obj1[i]+obj2[j]
+        } else if (objSum[j] == undefined) {
+            objSum[i]=obj1[i]
+            objSum[j]=obj2[j]
+        } else if (objSum[i] == undefined) {
+            objSum[i]=obj1[i]
+        }
+       } 
+    };
+    console.log(objSum);
+
+    // 8. Копирование объекта
+    const original = {
+        first: 1,
+        second: 2,
+        third: {
+            fghjk: 5,
+            dud: 3,
+            sdcjids: {
+                fvjkofd: 8,
+                dciodfv: 4
+            }
+        }
+    };
+    const copy = Object.assign({}, original);
+    copy.first = 5;
+    copy.third = 4;
+    console.log(`Оригинальный объект:`);
+    console.log(original);
+    console.log(`Копия:`);
+    console.log(copy);
+
+    // 9. Функция для подсчета свойств
+    function lenObject(obj) {
+        let length = 0;
+        for (o in obj){
+            length++
+        }
+    }
+    console.log(Object.keys(original).length)
 </script>
 </html>
