@@ -206,10 +206,7 @@
         third: {
             fghjk: 5,
             dud: 3,
-            sdcjids: {
-                fvjkofd: 8,
-                dciodfv: 4
-            }
+            sdcjids: 8
         }
     };
     const copy = Object.assign({}, original);
@@ -223,10 +220,37 @@
     // 9. Функция для подсчета свойств
     function lenObject(obj) {
         let length = 0;
-        for (o in obj){
-            length++
+        for (let o in obj) {
+            if (Object.keys(obj[o]).length < 1) {
+                length++
+            } else {
+                length = length + Object.keys(obj[o]).length+1
+            }
         }
+        console.log(`В объекте ${length} свойств`)
+    };
+    lenObject(original);
+
+    // 10. Код по пунктам
+    user = {};
+    user.name = 'John';
+    user.surname = 'Smith';
+    user.name = 'Pete';
+    delete user.name;
+
+    // 11. Сумма зарплат
+    let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130
     }
-    console.log(Object.keys(original).length)
+    function salSum(obj){
+        let sum = 0;
+        for (o in obj){
+            sum = sum + obj[o]
+        }
+        console.log(`Общая сумма зарплат: ${sum}`)
+    }
+    salSum(salaries)
 </script>
 </html>
