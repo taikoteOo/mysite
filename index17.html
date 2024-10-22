@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function callSomeFunc(){
+    //     console.log('Функция callSomeFunc')
+    // }
+    // try {
+    //     callSomeFunc();
+    //     console.log('Конец блока try')
+    // }
+    // catch(error) {
+    //     console.log('Возникла ошибка')
+    //     console.log(error)
+    // }
+    // finally {
+    //     console.log('Блок finally')
+    // }
+    // console.log('Остальной код')
+
+    function chechAge(age){
+        if (age>18){
+            console.log('Access approved')
+        } else {
+            // throw 'Access denied!!!'
+            throw newError('Access denied!!!')
+        }
+    }
+    try {
+        chechAge(17)
+    }
+    catch(error) {
+        console.error('Ошибка',error.message)
+    }
+    
+</script>
+</html>

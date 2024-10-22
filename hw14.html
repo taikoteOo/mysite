@@ -6,16 +6,18 @@
     <title>Home work 14</title>
 </head>
 <body>
-    <input type='number' id='num1'>
-    <input type='number' id="num2">
+    <input type='text' id='num1'>
+    <input type='text' id="num2">
     <button onclick="sum()"></button>
 </body>
 <script>
     function sum() {
-        num1 = Number(document.querySelector('#num1').value)
-        num2 = Number(document.querySelector('#num2').value)
-        alert(num1+num2)
-        if (){
+        const num1 = Number(document.querySelector('#num1').value)
+        const num2 = Number(document.querySelector('#num2').value)
+        // alert(num1+num2)
+        alert(isNaN(num1))
+        alert(isNaN(num2))        
+        if (isNaN(num1) == !true && isNaN(num2) == !true){
             alert(`Сумма чисел: ${num1+num2}`)
         } else {
             alert('Невозможно вычислить сумму')
