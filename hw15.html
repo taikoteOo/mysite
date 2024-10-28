@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work 15</title>
+    <style>
+        /* Задание 2 */
+        .discription{color: rgb(56, 218, 91);}
+        /* Задание 5 */
+        .item{color: rgb(255, 171, 171); font-size: 15px;}
+        .aclive{color: red; font-size: 25px;}
+        /* Задание 7 */
+        li{background-color: aqua;}
+        /* Задание 8 */
+        #img1{height: 300px;}
+        /* Задание 10 */
+        #elem {color: rgb(171, 177, 255); font-size: 20px;}
+    </style>
+</head>
+<body>
+    <!-- Задание 1 -->
+    <h1 class="header" id="head">Нажми на текст</h1>
+    <!-- Задание 2 -->
+    <p class="discription" id="discription">Нажами, чтобы изменить цвет</p>
+    <!-- Задание 3 -->
+    <input type="text" class="input" id="inp">
+    <button class="button" id="btn">Получить значение</button>
+    <!-- Задание 4 -->
+    <p><button class="button" id="btn2">Нажами, чтобы изменить текст</button></p>
+    <!-- Задание 5 -->
+    <p class="item">Нажмите, чтобы активировать</p>
+    <!-- Задание 6 -->
+    <p id="message"></p>
+    <button class="button" id="btn3">Нажми, чтобы увидеть сообщение</button>
+    <!-- Задание 7 -->
+    <ul>
+        <li>Это</li>
+        <li>список</li>
+        <li>с</li>
+        <li>разными</li>
+        <li>пунктами</li>
+    </ul>
+    <button class="button" id="btn4">Изменить фон списка</button>
+    <!-- Задание 8 -->
+    <p><img id="img1" src="https://img-webcalypt.ru/storage/memes/rFyEMZjKiO2ws89kJlfumoRZnq95H4DoX5FTB4mgCfqKqgwdMjbrOEBctUKLHiCQUvUomJD1WfTvnK1ekThxHXdPcYK34OsO8ybcK4Amk11waEpYRifUWcaKkLrTUPXh-md.jpeg" alt="Где?"></p>
+    <button class="button" id="btn5">Где?</button>
+    <!-- Задание 9 -->
+    <P><input type="number" min="0" max="100" id="counter"></P>
+    <button class="button" id="btn6">Сделать больше</button>
+    <!-- Задание 10 -->
+    <p id="elem">Нажми, чтобы изменить стиль</p>
+    <!-- Задание 11 -->
+    <button class="button" id="btn7" style="font-size: 30px;">Изменить все кнопки!</button>
+</body>
+<script>
+    // Задание 1
+    document.querySelector('#head').addEventListener('click', () => {
+        document.querySelector('#head').innerText = 'Текст после нажатия'
+    })
+    // Задание 2
+    document.querySelector('#discription').addEventListener('click',() => {
+        document.querySelector('#discription').style.color = 'blue'
+    })
+    // Задание 3
+    document.querySelector('#btn').addEventListener('click',() => {
+        alert(`Значение поля: ${document.querySelector('#inp').value}`)
+    })
+    // Задание 4
+    document.querySelector('#btn2').addEventListener('click', () => {
+        document.querySelector('#btn2').innerText = 'Текст изменён'
+    })
+    // Задание 5
+    document.querySelector('.item').addEventListener('click', () => {
+        document.querySelector('.item').innerText = 'Активировано';
+        document.querySelector('.item').className = 'aclive'
+    })
+    // Задание 6
+    function mess() {
+        document.querySelector('#message').innerText = 'Это сообщение создано для тебя'
+    }
+    document.querySelector('#btn3').addEventListener('click',mess)
+    // Задание 7
+    function bacColor (){
+        document.querySelectorAll('li').forEach(li => {
+            li.style.backgroundColor = 'blueviolet'
+        })}
+    document.querySelector('#btn4').addEventListener('click',bacColor)
+    // Задание 8
+    document.querySelector('#btn5').addEventListener('click', () => {
+        document.querySelector('#img1').setAttribute('src','https://img-webcalypt.ru/storage/memes/g0Afkk3cTfkEEQrdDdK93C8JMuuNr4ZAU6D3MfbKnywbglBCZogBSgPmf1oxlhNfCCo14c45SHBKVFoEuwWFEKDR35ii0P3QQysWX2oXFsBkSw9jzHk1dDZvGW0dG71E-md.jpeg')
+    })
+    // Задание 9
+    document.querySelector('#btn6').addEventListener('click', () => {
+        document.querySelector('#counter').value = Number(document.querySelector('#counter').value)+1
+    })
+    // Задание 10
+    document.querySelector('#elem').addEventListener('click', () => {
+        document.querySelector('#elem').style.cssText = `color: red; font-size: 30px`
+        document.querySelector('#elem').innerText = 'Стиль изменён';
+    })
+    // Задание 11
+    function btnFun(){
+        document.querySelectorAll('button').forEach(button => {
+            button.style.color = 'red'
+        })
+    }
+    document.querySelector('#btn7').addEventListener('click',btnFun)
+</script>
+</html>
