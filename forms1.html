@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FormValidation</title>
+    <style>
+        #emailErrors {background-color: blueviolet; color: black; display: none; width: 40%;}
+    </style>
+  </head>
+  <body>
+    <form name="myForm" id="myForm" >
+      <p>
+        <label for="phone">Телефон:</label>
+        <input type="text" name="phone" id="phone" maxlength="15" minlength="10" required>
+        <div id="phoneErrors"></div>
+      </p>
+      <p>
+        <label for="email">Почта:</label>
+        <input type="email" name="email" id="email" required>
+        <div id="emailErrors"></div>
+      </p>
+      <p>
+        <label for="age">Возраст:</label>
+        <input type="number" name="age" id="age" min="0" max="150">
+        <div id="ageErrors"></div>
+      </p>
+      <button type="submit" name="submit" id="submit">Отправить</button>
+    </form>
+  </body>
+<script>
+      // willValidate - доступна ли валидация для элемента формы
+      // validity -> ValidityState - объект, содержащий информацию о валидации данного элемента формы
+      // Свойства ValidityState:
+      // 1. valid - True (проходит валидацию), False (не проходит)
+        // valueMissing - true (если в элементе, где должно быть значение (required), оно отсутствует)
+        // typeMismatch - true (если введённое значение не соответствует типу элемента формы)
+        // tooLong - true (если значение превышает максимально допустимый лимит)
+        // tooShort - true (если значение меньше минимально допустимого)
+        // rangeOverflow - true (если значение превышает диопазон допустимых значений)
+        // rangeUnderflow - true (если значение меньше диопазона допустимых значений)
+        // customError - true (если при вводе была сгенерирована кастомная ошибка)
+      // 2. validationMessage - содердит сообщение об ошибке
+
+    // Методы Constraction Validation API
+    // checkValidity() - проходит ли форма валидацию
+    // reportValidity() - то же, но отображает ошибки валидации
+    // setCustomValidity() - настройка сообщения валидации
+    
+    // const emailField = document.querySelector("#email");
+    // emailField.addEventListener("change", validateEmail);
+    // const emailErrors = document.querySelector('#emailErrors')
+
+    // const ageField = document.querySelector("#age");
+    // ageField.addEventListener("change", ageChange);
+    // ageField.addEventListener("focus", ageFocus);
+
+    // const phoneField = document.querySelector("#phone");
+    // phoneField.addEventListener("input", phoneEventIbput);
+
+
+    // function validateEmail() {
+    //     // console.log("Может валидироваться", emailField.willValidate);
+    //     // console.log("Значение отсутсвует", emailField.validity.valueMissing);
+    //     // console.log("Значение валидно", emailField.validity.valid);
+    //     // console.log("Значение соответсвует типу", emailField.validity.typeMismatch);
+    //     // console.log(emailField.validationMessage);
+    //     if(!emailField.validity.vaild){
+    //         emailErrors.textContent = emailField.validationMessage;
+    //         emailErrors.style.display = 'block'
+    //     } else {
+    //         emailErrors.textContent = '';
+    //         emailErrors.style.display = 'none'
+    //     }
+    // }
+
+    // function ageChange(event){
+    //     console.log('Изменился возраст')
+    //     console.log(event)
+    // }
+
+    // function ageFocus(){
+    //     console.log('Возраст')
+    //     console.log('В фокусе')
+    // }
+
+    // function phoneEventIbput(event){
+    //     console.log('Ввели значение:', event.target.value)
+    // }
+
+    const registerForm = document.myForm
+    const submit = registerForm.submit 
+    submit.addEventListener('click',validate)
+
+    function validate(){
+        if(!registerForm.phone.checkValidity()){
+            console.log('Phone is not valid')
+        }
+        if(!registerForm.age.checkValidity()){
+            console.log('Age is not valid')
+        }
+        if(!registerForm.email.checkValidity()){
+            console.log('Email is not valid')
+        }
+        if(registerForm.phone.validity.valueMissing){
+            registerForm.phone.setCustomValidity('Необходимо ввести номер телефона')
+        }
+    }
+</script>
+</html>
